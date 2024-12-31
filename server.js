@@ -4,6 +4,7 @@ const cors = require('cors');
 const packageRoutes = require('./routes/packageRoutes');
 const authRoutes = require('./routes/userRoutes');
 const queryRoutes = require('./routes/queryRoutes');
+const bookingRoutes = require('./routes/bookingRoutes');
 
 const app = express();
 
@@ -23,6 +24,7 @@ mongoose.connect("mongodb+srv://anniagg2003:annanay123456@chat-app.k7eirmx.mongo
 app.use('/api/packages',packageRoutes);
 app.use('/api/auth', authRoutes);
 app.use('/api/queries', queryRoutes);
+app.use('/api/bookings', bookingRoutes);
 
 const PORT = 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
